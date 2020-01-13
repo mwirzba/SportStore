@@ -1,0 +1,715 @@
+{
+	"info": {
+		"_postman_id": "635f689d-6f6f-4145-a085-c4015ba950c1",
+		"name": "Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Manufacturer",
+			"item": [
+				{
+					"name": "GetManufacturers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38830b33-50e9-4731-b9e0-e9f2f26e06b6",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/manufacturer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"manufacturer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostManufacturer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ddb222be-07b4-4fd0-9b41-b50aa3e03ce2",
+								"exec": [
+									"pm.test(\"response is created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"manufacturerId\": 7,\n        \"name\": \"KFD Nutrition77\",\n        \"yearOfCreation\": 19982,\n        \"representative\": \"Andrzej Reszka5\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/manufacturer/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"manufacturer",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutManufacturer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aa78d468-8da5-4a42-9c4c-f10dd6134363",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"manufacturerId\": 0,\n        \"name\": \"KFD Nutrition77\",\n        \"yearOfCreation\": 19982,\n        \"representative\": \"Andrzej Reszka5\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/manufacturer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"manufacturer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteManufacturer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "01b7d2cd-5487-4ade-a5c5-5ec1ee69a364",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/manufacturer/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"manufacturer",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetManufacturer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b6e5aad8-8e72-4f6d-bdaf-606325cb20b1",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/manufacturer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"manufacturer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GetProdutcs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d9c957a-0411-4f81-97bb-3164dcaed3ac",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"response is not null\",function() {\r",
+									"    let data =  pm.response.json();\r",
+									"    pm.expect(data.value).to.not.equal(null);\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ef00328b-0001-4f0d-b6d0-79d442b5ea02",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"id\": 2,\n        \"name\": \"Prod3\",\n        \"description\": \"Desc3\",\n        \"price\": 100,\n        \"categoryId\": 2\n }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/product/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb998242-9215-4855-b6f0-c94624e9e28e",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product/1?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ad8a373-7b52-4aca-ab4d-49735ae097a1",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"productId\": 2,\n        \"name\": \"new\",\n        \"price\": 89.99,\n        \"numberInStock\": 7,\n        \"manufacturer\": {\n            \"manufacturerId\": 1,\n            \"name\": \"KFD Nutrition\",\n            \"yearOfCreation\": 1998,\n            \"representative\": \"Andrzej Reszka\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/product/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "67c71f8d-6d92-4984-b121-62a05e7ed176",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductByName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7aa1a6f-3bed-403c-9b95-1088db203431",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productByName/KFD%20Premium%20Creatine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productByName",
+								"KFD%20Premium%20Creatine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductCategories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe97cb2a-7048-4934-a26f-35e392d56df6",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product/1/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product",
+								"1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddCategoryToProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveCategoryFromProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddWrongCategoryToProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "GetCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCategoryByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"categoryId\": 7,\r\n    \"name\": \"New\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/category/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"category",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"categoryId\": 1,\r\n    \"name\": \"Changed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCategory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "15e4ef9a-8934-4f97-bf44-75c6f6de427d",
+								"exec": [
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"response is not null\",function() {\r",
+									"    let data =  pm.response.json();\r",
+									"    pm.expect(data.value).to.not.equal(null);\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/category/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
