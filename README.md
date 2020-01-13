@@ -1,4 +1,5 @@
 # SportStore
+Project for  Java Enterprice Technologies classes on university.
 Java spring crud MVC with rest api application.
  Technologies used:
   *thymeleaf 
